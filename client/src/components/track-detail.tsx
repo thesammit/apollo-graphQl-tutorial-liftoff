@@ -19,7 +19,7 @@ import { Track } from '../__generated__/graphql';
  * author, length, number of views, modules list, among other things.
  * It provides access to the first module of the track.
  */
-const TrackDetail: React.FC<{ track: Track }> = ({ track }) => {
+const TrackDetail: React.FC<{ track?: Track | null }> = ({ track }) => {
   const {
     title,
     description,
@@ -42,15 +42,15 @@ const TrackDetail: React.FC<{ track: Track }> = ({ track }) => {
           <DetailItem>
             <h4>Track details</h4>
             <IconAndLabel>
-              <IconView width="16px" />
+              <IconView width="16px" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
               <div id="viewCount">{numberOfViews} view(s)</div>
             </IconAndLabel>
             <IconAndLabel>
-              <IconBook width="14px" height="14px" />
+              <IconBook width="14px" height="14px" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
               <div>{modulesCount} modules</div>
             </IconAndLabel>
             <IconAndLabel>
-              <IconTime width="14px" />
+              <IconTime width="14px" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
               <div>{humanReadableTimeFromSeconds(length ?? 0)}</div>
             </IconAndLabel>
           </DetailItem>
@@ -63,10 +63,9 @@ const TrackDetail: React.FC<{ track: Track }> = ({ track }) => {
             {/* Need to comment this out until Link is placed within a Router */}
             {/* <StyledLink to={`./module/${modules[0]['id']}`}> */}
             <Button
-              icon={<IconRun width="20px" />}
+              icon={<IconRun width="20px" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />}
               color={colors.pink.base}
-              size="large"
-            >
+              size="large" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
               Start Track
             </Button>
             {/* </StyledLink> */}
@@ -76,7 +75,7 @@ const TrackDetail: React.FC<{ track: Track }> = ({ track }) => {
           <DetailItem>
             <h4>Modules</h4>
             <ul>
-              {modules.map((module: any) => (
+              {modules?.map((module: any) => (
                 <li key={module.title}>
                   <div>{module.title}</div>
                   <ModuleLength>
