@@ -61,14 +61,14 @@ const TrackDetail: React.FC<{ track?: Track | null }> = ({ track }) => {
           </DetailItem>
           <div>
             {/* Need to comment this out until Link is placed within a Router */}
-            {/* <StyledLink to={`./module/${modules[0]['id']}`}> */}
-            <Button
-              icon={<IconRun width="20px" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />}
-              color={colors.pink.base}
-              size="large" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
-              Start Track
-            </Button>
-            {/* </StyledLink> */}
+            <StyledLink to={`./module/${modules[0]['id']}`}>
+              <Button
+                icon={<IconRun width="20px" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />}
+                color={colors.pink.base}
+                size="large" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
+                Start Track
+              </Button>
+            </StyledLink>
           </div>
         </DetailRow>
         <ModuleListContainer>

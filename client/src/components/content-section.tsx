@@ -17,7 +17,7 @@ const ContentDiv = styled.div({
   marginTop: 10,
   display: 'flex',
   flexDirection: 'column',
-  maxWidth: widths.textPageWidth,
+  maxWidth: `${widths.textPageWidth}px`,
   width: '100%',
   alignSelf: 'center',
   backgroundColor: colors.background,
