@@ -14,7 +14,10 @@ async function startApolloServer() {
                     trackAPI: new TrackAPI({ cache }),
                 },
             };
-        }
+        },
+        listen: {
+            port: 4000,
+        },
     });
     console.log(`
         🚀  Server is running!
